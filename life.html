@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>aITools</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/aitoolsbootstrap/">aITools</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/aitoolsbootstrap/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/aitoolsbootstrap/about.html">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Topics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://www.ibm.com/think/topics/machine-learning">Machine
+                            Learning </a>
+                        <a class="dropdown-item"
+                            href="https://www.geeksforgeeks.org/nlp/introduction-to-natural-language-processing-nlp/">Natural
+                            Language Processing</a>
+                        <a class="dropdown-item"
+                            href="https://www.geeksforgeeks.org/artificial-intelligence/artificial-intelligence-in-robotics/">Robotics</a>
+                        <a class="dropdown-item" href="https://www.ibm.com/think/topics/deep-learning">Deep Learning</a>
+                        <div class="dropdown-divider"></div>
+                        <!-- <a class = "dropdow-item" href = "">Explore More</a> -->
+                        <a class="dropdown-item"
+                            href="https://medium.com/@manishachaudhary_43386/topics-in-artificial-intelligence-complete-guide-c5a14c9af8d3">Explore
+                            More</a>
+                        <!-- <a class="dropdown-item" href="message.html">Write for us</a> -->
+                    </div>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/aitoolsbootstrap/contact.html">Contact Us</a>
+                </li>
+
+
+            </ul>
+              <form class="form-inline my-2 my-lg-0 position-relative" onsubmit="return searchPage()">
+
+                <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search">
+
+                <div id="suggestions" class="list-group position-absolute" style="top:40px; width:220px; z-index:1000;">
+                </div>
+
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    Search
+                </button>
+            </form>
+        </div>
+    </nav>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to aITools</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="exampleInputname">Enter your name</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirm Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create an Account</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <img src="image/ai35.jpg" class="bd-placeholder-img" width; height="350" alt="1"">
+                <div class=" card-body">
+        <strong class="d-inline-block mb-2 text-primary">Daily Technology</strong>
+        <h3 class="mb-0">Artificial Intelligence in Everyday Life</h3>
+        <div class="mb-1 text-muted">Jan 2026</div>
+        <p class="card-text mb-auto">AI is a part of daily life through smartphones, virtual assistants, recommendation
+            systems, and smart home devices. It is increasingly integrated into everyday tools such as navigation apps,
+            online shopping platforms, social media feeds, streaming services, and voice-controlled assistants, making
+            them more intelligent, adaptive, and responsive to user needs. These technologies help people save time,
+            improve accuracy, and make everyday tasks easier and more convenient by automating routine activities and
+            providing personalized suggestions based on user behavior and preferences. AI also plays a major role in
+            communication apps, spam filtering in emails, facial recognition in security systems, and predictive text
+            while typing, which improves speed and efficiency in digital interactions. In addition, AI-powered
+            recommendation systems on platforms like YouTube, Netflix, and e-commerce websites analyze user activity to
+            suggest relevant content, products, and services, enhancing user experience. Smart home devices such as
+            automated lighting, thermostats, and security cameras further demonstrate how AI is making homes more
+            efficient and secure. Overall, AI is deeply embedded in modern life, continuously improving comfort,
+            productivity, and convenience in both personal and professional activities.</p>
+        <br>
+        <a href="https://www.tableau.com/data-insights/ai/examples"><b>Click here to learn about daily use of
+                AI.</b></a>
+    </div>
+    <!-- <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+                <img src = "image/lap1 (1).jpg" class="bd-placeholder-img" width="500" height="250" alt="1">
+            </div> -->
+    <!-- <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>© 2026-2029 aITools, Krishma. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer> -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        const pages = {
+            "home": "/aitoolsbootstrap/",
+            "about": "/aitoolsbootstrap/about.html",
+            "contact": "/aitoolsbootstrap/contact.html",
+
+            "machine learning": "https://www.ibm.com/think/topics/machine-learning",
+            "nlp": "https://www.geeksforgeeks.org/nlp/introduction-to-natural-language-processing-nlp/",
+            "robotics": "https://www.geeksforgeeks.org/artificial-intelligence/artificial-intelligence-in-robotics/",
+            "deep learning": "https://www.ibm.com/think/topics/deep-learning",
+
+            "ai": "ai_intro.html",
+            "applications": "applic.html",
+            "everyday life": "life.html",
+            "global impact": "global.html"
+        };
+
+        const input = document.getElementById("searchInput");
+        const box = document.getElementById("suggestions");
+
+        input.addEventListener("input", function () {
+
+            let query = this.value.toLowerCase().trim();
+            box.innerHTML = "";
+
+            if (!query) return;
+
+            let results = Object.keys(pages).filter(item =>
+                item.includes(query)
+            );
+
+            if (results.length === 0) {
+                box.innerHTML = `<div class="list-group-item">No results found</div>`;
+                return;
+            }
+
+            results.forEach(item => {
+                let link = document.createElement("a");
+                link.className = "list-group-item list-group-item-action";
+                link.innerText = item;
+                link.href = pages[item];
+                box.appendChild(link);
+            });
+        });
+
+        // close dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+            if (e.target !== input) {
+                box.innerHTML = "";
+            }
+        });
+
+        // optional fallback search submit
+        function searchPage() {
+            let q = input.value.toLowerCase().trim();
+            if (pages[q]) {
+                window.location.href = pages[q];
+            } else {
+                alert("No results found");
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

@@ -56,28 +56,139 @@
                 </li>
 
 
+
             </ul>
+                  <form class="form-inline my-2 my-lg-0 position-relative" onsubmit="return searchPage()">
 
-           
+                <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search">
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                <div id="suggestions" class="list-group position-absolute" style="top:40px; width:220px; z-index:1000;">
+                </div>
+
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    Search
+                </button>
+             </form>
+            <div class="mx-2">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#signupModal">Sign up</button>
+            </div>
         </div>
-
     </nav>
-     <div class="card mb-3">
-                <img src = "image/ai33.jpg" class="bd-placeholder-img" width="1600px" height="350" alt="1"">
-                <div class="card-body">
-                    <strong class="d-inline-block mb-2 text-primary">Technology</strong>
-                        <h3 class="mb-0">Introduction to Technology</h3>
-                        <div class="mb-1 text-muted">Jan 2026</div>
-                        <p class="card-text mb-auto">Artificial Intelligence (AI) is the ability of machines and computer systems to simulate human intelligence processes such as thinking, learning, reasoning, and decision-making. It is a rapidly growing field in computer science that focuses on building systems capable of performing tasks that normally require human intelligence. These tasks include understanding natural language, recognizing images and speech, solving complex problems, and adapting to new information over time. AI works by using large amounts of data and advanced algorithms to detect patterns, make predictions, and continuously improve its performance without being explicitly programmed for every possible situation. In today’s world, AI has become deeply integrated into everyday life and is used in many different areas. For example, voice assistants like Siri and Google Assistant rely on AI to understand spoken language and respond intelligently, while recommendation systems on platforms such as YouTube, Netflix, and Amazon analyze user behavior to suggest personalized content. AI is also used in smart devices, healthcare systems for disease detection, financial systems for fraud detection, transportation for self-driving cars, and education platforms that adapt to individual learning styles. One of the most important branches of AI is machine learning, where systems learn from data and improve automatically, and deep learning, which allows machines to process complex patterns in a way inspired by the human brain. As technology continues to advance, AI is expected to play an even more significant role in transforming industries, increasing efficiency, and solving real-world problems across the globe.</p>
-                        <br>
-                        <a href = "https://www.geeksforgeeks.org/artificial-intelligence/what-is-artificial-intelligence-ai/"><b>Click Here to learn about AI in depth.</b></a>
-                    </div>
-            <!-- <div class="card">
+
+     <!--Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to aITools</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Sign-Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="exampleInputname">Enter your name</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirm Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create an Account</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <img src="image/ai33.jpg" class="bd-placeholder-img" width; height="350" alt="1"">
+                <div class=" card-body">
+        <strong class="d-inline-block mb-2 text-primary">Technology</strong>
+        <h3 class="mb-0">Introduction to Technology</h3>
+        <div class="mb-1 text-muted">Jan 2026</div>
+        <p class="card-text mb-auto">Artificial Intelligence (AI) is the ability of machines and computer systems to
+            simulate human intelligence processes such as thinking, learning, reasoning, and decision-making. It is a
+            rapidly growing field in computer science that focuses on building systems capable of performing tasks that
+            normally require human intelligence. These tasks include understanding natural language, recognizing images
+            and speech, solving complex problems, and adapting to new information over time. AI works by using large
+            amounts of data and advanced algorithms to detect patterns, make predictions, and continuously improve its
+            performance without being explicitly programmed for every possible situation. In today’s world, AI has
+            become deeply integrated into everyday life and is used in many different areas. For example, voice
+            assistants like Siri and Google Assistant rely on AI to understand spoken language and respond
+            intelligently, while recommendation systems on platforms such as YouTube, Netflix, and Amazon analyze user
+            behavior to suggest personalized content. AI is also used in smart devices, healthcare systems for disease
+            detection, financial systems for fraud detection, transportation for self-driving cars, and education
+            platforms that adapt to individual learning styles. One of the most important branches of AI is machine
+            learning, where systems learn from data and improve automatically, and deep learning, which allows machines
+            to process complex patterns in a way inspired by the human brain. As technology continues to advance, AI is
+            expected to play an even more significant role in transforming industries, increasing efficiency, and
+            solving real-world problems across the globe.</p>
+        <br>
+        <a href="https://www.geeksforgeeks.org/artificial-intelligence/what-is-artificial-intelligence-ai/"><b>Click
+                Here to learn about AI in depth.</b></a>
+    </div>
+    <!-- <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
@@ -86,5 +197,83 @@
                 </div>
                 <img src = "image/lap1 (1).jpg" class="bd-placeholder-img" width="500" height="250" alt="1">
             </div> -->
+    <!-- <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>© 2026-2029 aITools, Krishma. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer> -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script>
+        const pages = {
+            "home": "/aitoolsbootstrap/",
+            "about": "/aitoolsbootstrap/about.html",
+            "contact": "/aitoolsbootstrap/contact.html",
+
+            "machine learning": "https://www.ibm.com/think/topics/machine-learning",
+            "nlp": "https://www.geeksforgeeks.org/nlp/introduction-to-natural-language-processing-nlp/",
+            "robotics": "https://www.geeksforgeeks.org/artificial-intelligence/artificial-intelligence-in-robotics/",
+            "deep learning": "https://www.ibm.com/think/topics/deep-learning",
+
+            "ai": "ai_intro.html",
+            "applications": "applic.html",
+            "everyday life": "life.html",
+            "global impact": "global.html"
+        };
+
+        const input = document.getElementById("searchInput");
+        const box = document.getElementById("suggestions");
+
+        input.addEventListener("input", function () {
+
+            let query = this.value.toLowerCase().trim();
+            box.innerHTML = "";
+
+            if (!query) return;
+
+            let results = Object.keys(pages).filter(item =>
+                item.includes(query)
+            );
+
+            if (results.length === 0) {
+                box.innerHTML = `<div class="list-group-item">No results found</div>`;
+                return;
+            }
+
+            results.forEach(item => {
+                let link = document.createElement("a");
+                link.className = "list-group-item list-group-item-action";
+                link.innerText = item;
+                link.href = pages[item];
+                box.appendChild(link);
+            });
+        });
+
+        // close dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+            if (e.target !== input) {
+                box.innerHTML = "";
+            }
+        });
+
+        // optional fallback search submit
+        function searchPage() {
+            let q = input.value.toLowerCase().trim();
+            if (pages[q]) {
+                window.location.href = pages[q];
+            } else {
+                alert("No results found");
+            }
+            return false;
+        }
+    </script>
 </body>
+
 </html>
